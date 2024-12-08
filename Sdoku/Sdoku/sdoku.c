@@ -138,6 +138,9 @@ void modifyBoard() {
         board[cursorRow][cursorCol] = value;
         isModified[cursorRow][cursorCol] = (value != 0); // 수정한 경우 1로 설정
     }
+    else {
+        printf("잘못된 입력입니다. 다시 시도하세요.\n");
+    }
 }
 
 int main() {
