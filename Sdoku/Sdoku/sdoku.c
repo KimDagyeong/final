@@ -94,6 +94,29 @@ int main() {
             printBoard();
             printf("\n\n[ 화살표 키로 이동하고 수정하려면 Enter를 누르세요. ]\n");
             printf("[ s : 정답 보기, c : 정답 가리기, ESC : 초기 화면으로 돌아가기 ]\n");
+
+            int key = _getch();
+
+            if (key == 224) { // 방향키 입력
+                key = _getch(); // 두 번째 입력 받기
+                switch (key) {
+                case 72: // 위 화살표
+                    cursorRow = (cursorRow - 1 + size) % size;
+                    break;
+                case 80: // 아래 화살표
+                    cursorRow = (cursorRow + 1) % size;
+                    break;
+                case 75: // 왼쪽 화살표
+                    cursorCol = (cursorCol - 1 + size) % size;
+                    break;
+                case 77: // 오른쪽 화살표
+                    cursorCol = (cursorCol + 1) % size;
+                    break;
+                }
+            }
+            else if (key == 13) { // Enter 키
+                modifyBoard();
+            }
         }
     }
     return 0;
