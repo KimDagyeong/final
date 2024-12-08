@@ -118,6 +118,14 @@ int isSafe(int row, int col, int num) {
     int boxSize = (int)sqrt(size);
     int boxRowStart = row - row % boxSize;
     int boxColStart = col - col % boxSize;
+    for (int i = 0; i < boxSize; i++) {
+        for (int j = 0; j < boxSize; j++) {
+            if (solvedBoard[i + boxRowStart][j + boxColStart] == num) {
+                return 0;
+            }
+        }
+    }
+    return 1;
 }
 
 int main() {
