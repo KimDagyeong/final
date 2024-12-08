@@ -72,6 +72,28 @@ void printBoard() {
 
     for (int i = 0; i < topMargin; i++) printf("\n");
 
+    for (int i = 0; i < size; i++) {
+        printf("%*s", padding, "");
+        for (int j = 0; j < size; j++) {
+            if (i == cursorRow && j == cursorCol) {
+                printf(RED "%2d " RESET, board[i][j] ? board[i][j] : 0);
+            }
+            else if (isModified[i][j]) {
+                printf("\033[32m%2d \033[0m", board[i][j]); // 초록색으로 출력
+            }
+            else if (board[i][j] != 0) {
+                printf("\033[33m%2d \033[0m", board[i][j]); // 노란색
+            }
+            else {
+                printf("%2d ", board[i][j]);
+            }
+
+            if ((j + 1) % boxSize == 0 && j + 1 < size) {
+                printf(BLUE "| " RESET);
+            }
+        }
+        printf("\n");
+    }
 
     if (showSolution) {
         printSolution();
