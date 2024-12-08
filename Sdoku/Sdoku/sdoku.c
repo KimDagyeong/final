@@ -93,6 +93,14 @@ void printBoard() {
             }
         }
         printf("\n");
+
+        if ((i + 1) % boxSize == 0 && i + 1 < size) {
+            printf("%*s", padding, "");
+            for (int k = 0; k < size * 3 + (boxSize - 1); k++) {
+                printf(BLUE "-" RESET);
+            }
+            printf("\n");
+        }
     }
 
     if (showSolution) {
