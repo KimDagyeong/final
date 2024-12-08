@@ -63,6 +63,21 @@ void printSolution() {
     }
 }
 
+// 보드를 출력하는 함수
+void printBoard() {
+    int boxSize = (int)sqrt(size);
+    system("cls");
+    int padding = (80 - (size * 3 + (boxSize - 1))) / 2;
+    int topMargin = 3;
+
+    for (int i = 0; i < topMargin; i++) printf("\n");
+
+
+    if (showSolution) {
+        printSolution();
+    }
+}
+
 int main() {
     while (1) { // 초기 화면으로 돌아가기 위한 최상위 루프
         printf("해결할 스도쿠 크기를 선택하세요 ~ ! \n[ 1. 4X4 | 2. 9X9 | 3. 16X16 | 4. 종료 ] : ");
