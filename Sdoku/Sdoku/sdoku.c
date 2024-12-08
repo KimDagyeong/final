@@ -126,7 +126,7 @@ int isSafe(int row, int col, int num) {
         }
     }
     return 1;
-}
+} //숫자를 놓을 수 있는 경우 1 , 숫자를 놓을 수 없는 경우 0
 
 int main() {
     while (1) { // 초기 화면으로 돌아가기 위한 최상위 루프
