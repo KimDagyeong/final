@@ -53,6 +53,13 @@ void printSolution() {
                 printf(BLUE "| ");
             }
         }
+        printf("\n");
+        if ((i + 1) % boxSize == 0 && (i + 1) < size) {
+            for (int j = 0; j < size * 3 + (boxSize - 1); j++) {
+                printf(BLUE "-" RESET);
+            }
+            printf("\n");
+        }
     }
 }
 
